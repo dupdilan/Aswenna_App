@@ -14,6 +14,7 @@ import { Card } from "native-base";
 //Home Screen
 
 const { height, width } = Dimensions.get('screen');
+
 export class HomeScreen extends React.Component {
   static navigationOptions = { header: null, headerMode: "none" };
   state = {
@@ -32,12 +33,22 @@ export class HomeScreen extends React.Component {
        
     ]
  }
+ renderHeader() {
+  return (
+    <View style={styles.header}>
+      <View style={{ flex: 1, justifyContent: 'center' }}>
+        <Text >My Header</Text>
+      </View>
+    </View>
+  )
+}
   render() {
-    return (
-      // <View style={styles.container}>
-      // <Text>Home Screen</Text>
-      // </View>
+    return (      
+      <View>    
         <View>
+          {this.renderHeader()}
+        </View> 
+         <View>
             <ScrollView>
               <Card title='test'>
                {
@@ -56,11 +67,13 @@ export class HomeScreen extends React.Component {
                }
                </Card>
             </ScrollView>
-         </View>
-          
+                
+         </View>     
+        </View> 
     );
   }
 }
+
 
 export default (tabNavigator = createBottomTabNavigator(
   {

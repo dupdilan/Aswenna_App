@@ -72,7 +72,7 @@ export default class LogoutScreen extends React.Component {
 
               <View style={styles.buttonContainer}> 
               <TouchableOpacity
-                    
+                  
               >
               <Text>New Advertisment</Text> 
               </TouchableOpacity>
@@ -81,8 +81,7 @@ export default class LogoutScreen extends React.Component {
 
 
               <View style={styles.buttonContainer}> 
-              <TouchableOpacity
-                    
+              <TouchableOpacity 
                     onPress={() => this.props.navigation.navigate("Auth")}
               >
               <Text>Log Out</Text> 
